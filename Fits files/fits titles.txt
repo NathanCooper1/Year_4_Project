@@ -1,0 +1,6 @@
+/Users/Nathan/Documents/UNI/Year 4 Project/Fits files/obsid_1342204057.refs["level2_5"].product.refs["extdPLW"].product.fits
+/Users/Nathan/Documents/UNI/Year 4 Project/Fits files/obsid_1342204057.refs["level2_5"].product.refs["extdPMW"].product.fits
+/Users/Nathan/Documents/UNI/Year 4 Project/Fits files/obsid_1342204057.refs["level2_5"].product.refs["extdPSW"].product.fits
+/Users/Nathan/Documents/UNI/Year 4 Project/Fits files/obsid_1342204057.refs["level2_5"].product.refs["hiresPLW"].product.fits
+/Users/Nathan/Documents/UNI/Year 4 Project/Fits files/obsid_1342204057.refs["level2_5"].product.refs["hiresPMW"].product.fits
+/Users/Nathan/Documents/UNI/Year 4 Project/Fits files/obsid_1342204057.refs["level2_5"].product.refs["hiresPSW"].product.fits
