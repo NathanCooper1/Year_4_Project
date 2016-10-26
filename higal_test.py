@@ -38,11 +38,13 @@ data = loadtxt("/Users/Nathan/Documents/UNI/Year 4 Project/Fits files/fits title
 
 
 def smallplot(file,figure,subplot):
+    
     fig=aplpy.FITSFigure(file,figure=figure,subplot=subplot)
+    
     fig.show_grayscale()
     fig.show_contour()
     fig.add_grid
-    fig.add_colorbar
+   # fig.add_colorbar
     x=SkyCoord('16h35m08.48s','-48d46m32.2s',unit=(u.hourangle, u.deg) )    
     fig.recenter(x.ra.degree,x.dec.degree,0.06)
     print(x.ra.degree,x.dec.degree)
@@ -52,7 +54,8 @@ f,a=plot.subplots(3,3)
 f.clf()
 for i in range(len(data)):
     smallplot(data[i],f,(3,3,(i+1)))
-    
+ 
+   
 #f,a=plot.subplots(3,3)
 #f=plot.figure(1)
 #f.clf()
