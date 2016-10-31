@@ -44,6 +44,7 @@ def smallplot(file,figure,subplot):
     fig.show_grayscale(stretch='log')
     fig.show_contour()
     fig.add_grid
+    fig.tick_labels.set_font(size='xx-small')
     fig.set_theme('publication')
     x=SkyCoord('16h35m08.48s','-48d46m32.2s',unit=(u.hourangle, u.deg) )    
     fig.recenter(x.ra.degree,x.dec.degree,0.06)
@@ -64,4 +65,5 @@ for i in range(len(data)):
 #smallplot(file,f,(3,3,5))
 #
 plot.show()
+
 ##a[0,0].smallplot('/Users/Nathan/Documents/UNI/Year 4 Project/Fits files/obsid_1342204057.refs["level2_5"].product.refs["hiresPLW"].product.fits')
