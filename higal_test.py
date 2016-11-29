@@ -57,14 +57,16 @@ def verticalcut(file1,file2,x,figure):
     coord=array([[x.ra.degree,x.dec.degree]])
     w=wcs.WCS(hdulist[1].header)
     w2=wcs.WCS(hdulist2[1].header)
-    graph= scidata[150:250,int(w.wcs_world2pix(coord,1)[0,0])]
-    graph2= scidata2[300:500,int(w2.wcs_world2pix(coord,1)[0,0])]
-    graphx=linspace(1,100,100)*float(hdulist[1].header['CDELT1'])
-    graph2x=linspace(1,200,200)*float(hdulist2[1].header['CDELT1'])
+    graph= scidata[:,int(w.wcs_world2pix(coord,1)[0,0])]
+    graph2= scidata2[:,int(w2.wcs_world2pix(coord,1)[0,0])]
+    graphx=(arange(len(graph))*float(hdulist[1].header['CDELT1']))*60
+    graph2x=(arange(len(graph2))*float(hdulist2[1].header['CDELT1']))*60
     plt.plot(graphx,graph,label='Native')
     plt.plot(graph2x,graph2,label='Hi res')
     plt.ylabel('$MJy/Sr$')
-    plt.xlabel('Position')
+    plt.xlabel('Position/$Arcminutes$')
+    plt.xlim((-49,-43))
+    
     
 def verticalcutsmall(file1,file2,x,figure,subplot):
     hdulist = fits.open(file1)
@@ -114,7 +116,7 @@ f,a=plt.subplots(3,3)
 title=array(['extdPLW','extdPMW','extdPSW','hiresPLW','hiresPMW','hiresPSW'])
 f.clf()
 
-
+'''
 for i in range(len(data)):
     #if i>0:
         #continue
@@ -124,6 +126,7 @@ for i in range(3):
     verticalcutsmall(data[i],data[i+3],x,f,(i+7))
     plt.legend()
 f.tight_layout(pad=0)
+'''
 '''
 #large scale image with line showing cut position
 fig=aplpy.FITSFigure(data[4],hdu=1)   
@@ -141,7 +144,7 @@ coord=array([[x.ra.degree,x.dec.degree]])
 plt.axvline(x=(int(w.wcs_world2pix(coord,1)[0,0])),ymin=0.,ymax=1,c="blue",linewidth=0.5)
 plt.axhline(y=(int(w.wcs_world2pix(coord,1)[0,1])),xmin=0.,xmax=1,c="blue",linewidth=0.5)
 '''
-'''
+
 h=plt.figure()
 fitsplot(data[0],h,x,'Native')
 h=plt.figure()
@@ -150,7 +153,7 @@ h=plt.figure()
 verticalcut(data[0],data[3],x,h)
 plt.title('Vertical cross cut')
 plt.legend()
-'''
+
 
 #linearr=array([[x.ra.degree,x.ra.degree],[-48.83,-48.73]])
 #fig.show_lines([linearr],linewidth=2,color='c')

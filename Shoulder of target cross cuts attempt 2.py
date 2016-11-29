@@ -99,7 +99,7 @@ def verticalcutsmall(file1,file2,x,figure,subplot):
     g.set_ylabel('$MJy/Sr$')
     g.set_xlabel('Position/$Arcminutes$')
     g.set_xlim((-49,-43))
-#    g.set_ylim(0,4000)
+    g.set_ylim(0,4000)
     
 
 def horizontalcut(file1,file2,x,figure,subplot):
