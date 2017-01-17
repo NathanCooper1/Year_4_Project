@@ -12,7 +12,7 @@ import aplpy
 from astropy import wcs
 from astropy import units as u
 from astropy.coordinates import SkyCoord
-#from project_functions import *
+import project_functions
 
 from matplotlib.cbook import MatplotlibDeprecationWarning
 import warnings
@@ -116,7 +116,7 @@ f,a=plt.subplots(3,3)
 title=array(['extdPLW','extdPMW','extdPSW','hiresPLW','hiresPMW','hiresPSW'])
 f.clf()
 
-'''
+
 for i in range(len(data)):
     #if i>0:
         #continue
@@ -126,7 +126,7 @@ for i in range(3):
     verticalcutsmall(data[i],data[i+3],x,f,(i+7))
     plt.legend()
 f.tight_layout(pad=0)
-'''
+
 '''
 #large scale image with line showing cut position
 fig=aplpy.FITSFigure(data[4],hdu=1)   
